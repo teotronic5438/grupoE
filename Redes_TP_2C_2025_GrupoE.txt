@@ -7,32 +7,58 @@ Profesor: Rusatti.
 Estado: Borrador.
 
 1- ¿Qué es una VLAN?
-El término viene de una lan virtual, una red de área local virtual. Es una segmentación de una red, que puede ser en menor o mayor medida dependiendo la cantidad 
-de direcciones de hosts disponibles que querramos obtener.
+El término viene de una lan virtual, una red de área local virtual. Es una segmentación de una red, que puede ser en menor o mayor medida dependiendo la cantidad de direcciones de hosts disponibles que desearíamos obtener.
 
 2- ¿Qué es una VPN?
 Es una red privada virtual, mediante encriptación se cifra el tráfico proveniente de una red y un cliente.
 
 3- ¿Qué es una SAN?
+Es una red área de almacenamiento. Diferentes tipos de almacenamiento discos, cintas, se encuentran conectados a dispositivos que su vez comparten los recursos permitiendo el acceso en conjunto. Teniendo caminos y discos redundates con un rápido acceso (canales de fibra) mejorando la fiabilidad y la baja latencia.
 
 4- Diferencias entre un Hub, Repetidor, Router y SWITCH. Explicar las diferencias.
-Hub, repetidor trabajan en la capa 1 del modelo OSI.
-Switch, trabaja en la capa 2 del modelo OSI, se encarga de la conmutación de paquetes mediante direcciones MAC.
-Router, trabaja en la capa 3 del modelo OSI (Red), se encarga de enrutar el tráfico por diferentes redes mediantes el protocolo IP.
+Hub, repetidor trabajan en la capa 1 del modelo OSI. No tiene una conexión lógica, la señal se repite mediante una señal eléctrica.
+Switch, trabaja en la capa 2 del modelo OSI, se encarga de la conmutación de paquetes mediante direcciones MAC. Posee una conexión lógica.
+Router, trabaja en la capa 3 del modelo OSI (Red), se encarga de enrutar el tráfico por diferentes redes mediantes el protocolo IP. El router posee tablas de enrutamiento permitiendo el acceso a las redes con protocolos de enrutamiento, que pueden estáticos o dinámicos (rip, ospf).
 
 5- ¿Qué es un protocolo de comunicaciones?
+Es un lenguaje mediante el cual los dispositivos logran entablar una comunicación con éxito.
 
 6- Explique TCP/IP y NetBios, resuma sus diferencias. (Acá sí explicar cada uno y sus
 diferencias)
 
+Tcp/Ip Protocolo de control de transmisión / Protocolo Internet. 
+Es un conjunto de protocolos de transmisión que permite la comunicación entre redees incluídas LAN e internet definiendo como se envía, direccionan, transmiten y enrutan y reciben datos entre dispositivos.
+
+NetBios Network Basic Input Output System
+Es una api desarrollada por IBM en los 80 que facilita la comunicación entre aplicaciones en una red local.
+Provee nombres lógicos como ej (pc_oficina) en lugar de direcciones ip para equipos que puedan encontrarse y compartir recursos.
+
+
 7- ¿Cómo está formado un paquete de datos en TCP/IP? ¿Qué es un “flag” en un
 paquete de TCP/IP?
+El flag en un paquete TCP es un bit de control que indica que se está haciendo en la comunicación (iniciar, confirmar, enviar urgente, cerrar, resetear).
 
 8- Defina la red según su geografía. Explicar distintas variantes.
+Pan, personal area network, muy pequeña dista unos pocos metros, en un entorno personal.
+Lan, local area network, dentro de una casa, oficina, o edificio.
+Can, campus area network, red entre varios edificios cercanos, como un campus o parque tecnológico.
+Man, metropolitan area network, cubre una ciudad o área metropolitana.
+Wan, wide area network, cubre un pais, continente o es global.
+Gan, global area network, extiende la conectividad a nivel mundial con enlaces satelitales.
+
 
 9- Defina una red según su topología. Explicar distintas variantes.
+Bus, todos los dispositivos companten un mismo canal de comunicación.
+Estrella, todos los dispositivos se conectan a un dispositivo central, puede se un hub o switch.
+Anillo, todos los dispositivos se conectan unos con otros de forma circular, cada uno enlazado con el siguiente.
+Malla, cada nodo se conectan con varios otros, formando múltiples rutas.
+Árbol, es una combinación de varias estrellas conectadas en forma jerárquica.
+Híbrida, es un combinación que puede surgir entre una topología de estrella y bus por ejemplo.
+
 
 10- Explicar el servicio de DHCP.
+Dinamic host configuration protocol, es un servicio dentro de una red que asigna direcciones ip. 
+Un dispositivo al conectarse a una red, se le asigna dinámicamente una dirección de red, máscara de subred, una dirección DNS y un gateway con un tiene un tiempo de concesión (lease time).
 
 11- Explicar el servicio de DNS.
 
