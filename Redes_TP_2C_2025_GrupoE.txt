@@ -108,12 +108,16 @@ Routing & Switching y de algún otro a elección (ej. Wireless, Security, Cloud,
 desventajas.
 
 29- Explicar el estándar IEEE 802.4 regula la red.
+El estándar IEEE 802.4 describe una red en bus que funciona mediante token. El token indica qué estación tiene permiso para transmitir. Ninguna estación puede enviar datos si no tiene el token. Físicamente, la red se organiza como la topología bus, pero lógicamente funciona con la topología de anillo. Cada estación tiene un número único que la identifica. Al iniciar la red, la estación con el número más alto genera el token, que luego se pasa a la estación con el siguiente número más bajo. La estación que recibe el token puede transmitir sus datos y, al terminar o cuando se cumple un tiempo límite, pasa el token a la siguiente estación. Este proceso se repite hasta que todas las estaciones hayan tenido su turno, permitiendo que cada una transmita de manera ordenada y periódica. Así, la red implementa un sistema organizado de acceso al medio llamado multiplexación en el tiempo.
 
 30- ¿Qué protocolos se usan para enviar y recibir correo?
+Para enviar correo se utiliza el protocolo SMTP (Simple Mail Transfer Protocol) y para recibir se usa POP (Post Office Protocol)
 
 31- ¿Qué protocolo puede usarse para leer correo recibido?
+El protocolo IMAP (Internet Message Access Protocol) permite leer y organizar tus correos directamente en el servidor. Con él puedes mover mensajes entre carpetas, eliminar correos, buscar información dentro de los mensajes y marcar correos con banderas. Por defecto, los correos se quedan en el servidor hasta que tú decidas borrarlos.
 
 32- Diferencias entre IPV4 e IPV6
+IPv4 consta de 32 bits dividido en 4 octetos donde cada octeto es un número decimal entre 0 y 255. Los octetos están separados por puntos. Mientras que en una dirección IPv6 consta de 128 bits, representados en 8 grupos de 16 bits expresados en hexadecimal separados por dos puntos. IPv4 ofrece millones de direcciones e IPv6 tiene prácticamente un sin fin de posibles direcciones.
 
 33- (Individual para cada integrante del grupo) ¿Qué experiencia tienen en redes?
 Ejemplos.: Accedo y configuro el router de mi casa como admin, en mi trabajo
@@ -122,3 +126,5 @@ familia, amigos/as etc (Personal Area Network, todo dispositivo Wireless o no), 
 tengo ninguna experiencia, etc.
 
 Ariel Iha: he configurado router hogareño para conectar dispositivos ip, como cámaras, impresoras, servidores de archivos, configurado ip estáticas basadas en direcciones mac desde la página del router, cambié la contraseña de una red wifi. He armado cables con fichas rj45, testeado cables de red.
+
+Nestor Diaz: No tengo experiencia en redes, el mayor acercamiento que tuve fue cuando investigué un poco sobre como poder tener internet en mi PC, y aprendí que se puede utilizar placas wifi o usar un cable Ethernet conectado directamente al router. 
