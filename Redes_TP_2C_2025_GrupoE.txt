@@ -65,6 +65,8 @@ Un dispositivo al conectarse a una red, se le asigna dinámicamente una direcci�
 El DNS es un sistema que conecta los nombres de los sitios con las direcciones que usan las computadoras para encontrarse en la red.
 Cuando alguien escribe un nombre de página, se hace una consulta a un servicio que busca la dirección correspondiente. Si no la tiene guardada, va preguntando en distintos niveles hasta llegar al lugar que tiene la información correcta. Una vez que obtiene esa dirección, la devuelve para que se pueda establecer la comunicación.
 
+Video complementario: https://app.animaker.com/video/KGOEMD7EXAQX6F55
+
 12- Explicar las tecnologías Wireless, y sus estándares. 
 
 Las tecnologías Wireless son las que permiten transmitir información sin necesidad de cables, usando ondas de radio, infrarrojas o microondas. Gracias a esto, los dispositivos pueden conectarse entre sí o a una red sin estar físicamente unidos, lo que da más movilidad y flexibilidad.
@@ -83,10 +85,14 @@ El Spanning Tree Protocol (STP) es un protocolo de red que se usa para evitar bu
 STP funciona identificando un switch raíz y calculando la mejor ruta hacia él desde cada dispositivo de la red usando un costo asociado a cada enlace, que generalmente depende del ancho de banda: a mayor velocidad, menor costo. El protocolo mantiene activas las rutas con menor costo y bloquea las demás para evitar bucles. Si alguna ruta activa falla, STP puede reactivar uno de los caminos bloqueados para mantener la conectividad.
 El Spanning Tree Protocol organiza la red de forma que siempre haya una única ruta activa entre dispositivos, evitando problemas por bucles sin desconectar físicamente cables.
 
+Video complementario: https://app.animaker.com/video/KGOEMD7EXAQX6F55
+
 15- Explicar el protocolo de comunicaciones OSPF. 
 El OSPF (Open Shortest Path First) es un protocolo de enrutamiento interior que se utiliza para que los routers dentro de una misma red intercambien información sobre las rutas disponibles y puedan determinar la mejor forma de enviar los paquetes de datos. Es un protocolo de tipo link-state, lo que significa que cada router tiene conocimiento completo del estado de los enlaces de la red y construye un mapa de toda la topología.
 Cada router comparte su información a través de mensajes llamados LSA (Link State Advertisements). Estos mensajes contienen detalles sobre los enlaces que tiene el router y sus costos asociados, generalmente basados en ancho de banda o métricas de rendimiento. Con esa información, cada router ejecuta el algoritmo de Dijkstra para calcular la ruta más corta hacia cada destino, asegurando que los paquetes tomen caminos eficientes y evitando bucles de enrutamiento.
 El OSPF también organiza la red en áreas, lo que permite manejar redes grandes de forma más eficiente y reducir la cantidad de información que cada router necesita procesar. Además, es capaz de adaptarse rápidamente a cambios en la red, como fallas de enlaces o la adición de nuevos routers, actualizando su mapa y recalculando rutas en tiempo real.
+
+Video complementario: https://app.animaker.com/video/KGOEMD7EXAQX6F55
 
 16- Explicar el protocolo ARP. 
 
@@ -122,6 +128,8 @@ otra empresa es también válido.
 24- ¿Qué significa aplicar calidad en un enlace MPLS?
 
 25- ¿Qué diferencias puede encontrar entre una conexión Coaxial, UTP o Fibra?
+
+Video complementario: https://www.youtube.com/watch?v=F-FmK9MXJY4
 
 26- Según Cisco, ¿qué significa CCENT, CCNA y CCNP? Descripción breve del Track
 Routing & Switching y de algún otro a elección (ej. Wireless, Security, Cloud, etc).
