@@ -224,6 +224,9 @@ Nestor Diaz: No tengo experiencia en redes, el mayor acercamiento que tuve fue c
 
 Matias Otero: Trabajo en el área de Telecomunicaciones – Estoy mas en la parte de Ups y sistemas de alimentación segura, configuro ocasionalmente algún puerto de un Switch , cambio vlan y realizo algún troubleshooting básico, armo algún cable o conectores ,alguna vez fusione fibra, pero básicamente los conocimientos adquiridos fueron de manera informal.
 
+Elias Orihuela Torres: He trabajado como soporte técnico y revisado habitualmente la configuracion de router, computadoras e impresoras. Armado de cables de red básicos en LAN.
+No tengo experiencia con fibra óptica, pero si hice un curso de administración de redes y Windows server donde vimos configuración de cisco pero fue hace mas de 10 años.
+
 
 Bibliografia consultada:
 
