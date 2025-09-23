@@ -60,17 +60,41 @@ Híbrida, es un combinación que puede surgir entre una topología de estrella y
 Dinamic host configuration protocol, es un servicio dentro de una red que asigna direcciones ip. 
 Un dispositivo al conectarse a una red, se le asigna dinámicamente una dirección de red, máscara de subred, una dirección DNS y un gateway con un tiene un tiempo de concesión (lease time).
 
-11- Explicar el servicio de DNS.
+11- Explicar el servicio de DNS. 
 
-12- Explicar las tecnologías Wireless, y sus estándares.
+El DNS es un sistema que conecta los nombres de los sitios con las direcciones que usan las computadoras para encontrarse en la red.
+Cuando alguien escribe un nombre de página, se hace una consulta a un servicio que busca la dirección correspondiente. Si no la tiene guardada, va preguntando en distintos niveles hasta llegar al lugar que tiene la información correcta. Una vez que obtiene esa dirección, la devuelve para que se pueda establecer la comunicación.
 
-13- ¿Qué es un Proxy?
+12- Explicar las tecnologías Wireless, y sus estándares. 
 
-14- Explicar el protocolo Spanning tree.
+Las tecnologías Wireless son las que permiten transmitir información sin necesidad de cables, usando ondas de radio, infrarrojas o microondas. Gracias a esto, los dispositivos pueden conectarse entre sí o a una red sin estar físicamente unidos, lo que da más movilidad y flexibilidad.
+Con el tiempo se fueron creando estándares que definen cómo deben comunicarse estos dispositivos. Los más conocidos son los de la familia Wi-Fi (IEEE 802.11), que empezaron con 802.11b y g, luego pasaron a 802.11n, y más tarde a 802.11ac y 802.11ax (conocido como Wi-Fi 6). Cada nueva versión fue mejorando la velocidad, el alcance y la capacidad de manejar más dispositivos al mismo tiempo.
+Existen también otros estándares dentro del mundo inalámbrico, como Bluetooth para conexiones de corto alcance entre equipos, WiMAX (802.16) para cubrir áreas más amplias, o las redes móviles como 3G, 4G y 5G que se usan en la telefonía celular.
 
-15- Explicar el protocolo de comunicaciones OSPF.
+13- ¿Qué es un Proxy? 
 
-16- Explicar el protocolo ARP.
+Un proxy es un intermediario entre un dispositivo y el destino al que quiere conectarse en la red. Cuando se hace una petición, en lugar de ir directo al servidor final, primero pasa por el proxy, que luego la reenvía y devuelve la respuesta al usuario.
+Puede usarse para distintas funciones: mejorar la seguridad al ocultar la dirección real del usuario, controlar o filtrar el acceso a ciertos contenidos, guardar en caché información para acelerar el acceso a páginas frecuentes, o incluso balancear la carga entre varios servidores.
+Es un punto intermedio que gestiona y controla el tráfico entre el cliente y el servidor.
+
+14- Explicar el protocolo Spanning tree. 
+
+El Spanning Tree Protocol (STP) es un protocolo de red que se usa para evitar bucles en redes de área local (LAN) que tienen múltiples caminos entre switches. Los bucles pueden causar que los paquetes se repitan infinitamente, saturando la red.
+STP funciona identificando un switch raíz y calculando la mejor ruta hacia él desde cada dispositivo de la red usando un costo asociado a cada enlace, que generalmente depende del ancho de banda: a mayor velocidad, menor costo. El protocolo mantiene activas las rutas con menor costo y bloquea las demás para evitar bucles. Si alguna ruta activa falla, STP puede reactivar uno de los caminos bloqueados para mantener la conectividad.
+El Spanning Tree Protocol organiza la red de forma que siempre haya una única ruta activa entre dispositivos, evitando problemas por bucles sin desconectar físicamente cables.
+
+15- Explicar el protocolo de comunicaciones OSPF. 
+El OSPF (Open Shortest Path First) es un protocolo de enrutamiento interior que se utiliza para que los routers dentro de una misma red intercambien información sobre las rutas disponibles y puedan determinar la mejor forma de enviar los paquetes de datos. Es un protocolo de tipo link-state, lo que significa que cada router tiene conocimiento completo del estado de los enlaces de la red y construye un mapa de toda la topología.
+Cada router comparte su información a través de mensajes llamados LSA (Link State Advertisements). Estos mensajes contienen detalles sobre los enlaces que tiene el router y sus costos asociados, generalmente basados en ancho de banda o métricas de rendimiento. Con esa información, cada router ejecuta el algoritmo de Dijkstra para calcular la ruta más corta hacia cada destino, asegurando que los paquetes tomen caminos eficientes y evitando bucles de enrutamiento.
+El OSPF también organiza la red en áreas, lo que permite manejar redes grandes de forma más eficiente y reducir la cantidad de información que cada router necesita procesar. Además, es capaz de adaptarse rápidamente a cambios en la red, como fallas de enlaces o la adición de nuevos routers, actualizando su mapa y recalculando rutas en tiempo real.
+
+16- Explicar el protocolo ARP. 
+
+El ARP (Address Resolution Protocol) es un protocolo de red que se utiliza para mapear direcciones IP a direcciones MAC dentro de una misma red local (LAN) . Cada dispositivo en una red tiene una dirección física única llamada MAC , que se usa para el envío de tramas a nivel de enlace , mientras que las direcciones IP operan a nivel de red . ARP actúa como un traductor entre estos dos niveles.
+Cuando un dispositivo necesita enviar un paquete a otro en la misma red, pero solo conoce su dirección IP, envía un mensaje ARP de solicitud (ARP Request) en broadcast, preguntando “Quién tiene esta IP?”. Todos los dispositivos de la red reciben la solicitud, pero solo aquel que posee la IP consultada responde con un mensaje ARP de respuesta (ARP Reply) indicando su dirección MAC. El remitente guarda esta información en una tabla ARP o caché, para no tener que consultar de nuevo en futuras comunicaciones.
+Existen también variantes y mecanismos relacionados, como ARP inverso (RARP), que permite obtener una dirección IP a partir de una MAC, y protocolos de seguridad que ayudan a evitar ataques como ARP spoofing, donde un dispositivo malicioso envía respuestas ARP falsas para interceptar o redirigir tráfico.
+El ARP es un componente crítico en redes locales, porque permite que los dispositivos identifiquen correctamente a sus vecinos y transmitan datos a nivel de enlace de manera eficiente.
+
 
 17- ¿Qué es un Firewall?
 
@@ -128,3 +152,5 @@ tengo ninguna experiencia, etc.
 Ariel Iha: he configurado router hogareño para conectar dispositivos ip, como cámaras, impresoras, servidores de archivos, configurado ip estáticas basadas en direcciones mac desde la página del router, cambié la contraseña de una red wifi. He armado cables con fichas rj45, testeado cables de red.
 
 Nestor Diaz: No tengo experiencia en redes, el mayor acercamiento que tuve fue cuando investigué un poco sobre como poder tener internet en mi PC, y aprendí que se puede utilizar placas wifi o usar un cable Ethernet conectado directamente al router. 
+
+Matias Otero: Trabajo en el área de Telecomunicaciones – Estoy mas en la parte de Ups y sistemas de alimentación segura, configuro ocasionalmente algún puerto de un Switch , cambio vlan y realizo algún troubleshooting básico, armo algún cable o conectores ,alguna vez fusione fibra, pero básicamente los conocimientos adquiridos fueron de manera informal.
