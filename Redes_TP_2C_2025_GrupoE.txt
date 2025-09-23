@@ -36,6 +36,26 @@ Provee nombres lógicos como ej (pc_oficina) en lugar de direcciones ip para equ
 
 7- ¿Cómo está formado un paquete de datos en TCP/IP? ¿Qué es un “flag” en un
 paquete de TCP/IP?
+En una red basada en TCP/IP, los datos viajan encapsulados en paquetes, y cada capa del modelo agrega su propia cabecera (header).
+La estructura general de un paquete típico cuando se usa TCP/IP es así:
+
+Capa de Enlace (Ethernet, Wi-Fi, etc.)
+    Cabecera de enlace: contiene las direcciones físicas (MAC de origen y destino) y el tipo de protocolo de red.
+    Trama: este nivel incluye también un campo de control de errores (CRC).
+
+Capa de Red (IP)
+    Cabecera IP: incluye dirección IP de origen, dirección IP de destino, TTL (tiempo de vida), protocolo (ej: 6 = TCP, 17 = UDP).
+    Capa de Transporte (TCP o UDP)
+
+Cabecera TCP: incluye puerto de origen, puerto de destino, número de secuencia, número de confirmación, flags, ventana de recepción, checksum, etc.
+    Aquí es donde se maneja el control de la comunicación (fiabilidad, orden de entrega, control de congestión).
+    Capa de Aplicación
+
+Datos: el contenido real que envía la aplicación (por ejemplo, una página web HTTP, un correo electrónico SMTP, un archivo FTP, etc.).
+
+👉 Entonces, el paquete completo está formado por:
+[Cabecera Enlace] + [Cabecera IP] + [Cabecera TCP] + [Datos de Aplicación]
+
 El flag en un paquete TCP es un bit de control que indica que se está haciendo en la comunicación (iniciar, confirmar, enviar urgente, cerrar, resetear).
 
 8- Defina la red según su geografía. Explicar distintas variantes.
@@ -65,6 +85,8 @@ Un dispositivo al conectarse a una red, se le asigna dinámicamente una direcci�
 El DNS es un sistema que conecta los nombres de los sitios con las direcciones que usan las computadoras para encontrarse en la red.
 Cuando alguien escribe un nombre de página, se hace una consulta a un servicio que busca la dirección correspondiente. Si no la tiene guardada, va preguntando en distintos niveles hasta llegar al lugar que tiene la información correcta. Una vez que obtiene esa dirección, la devuelve para que se pueda establecer la comunicación.
 
+Video complementario: https://app.animaker.com/video/KGOEMD7EXAQX6F55
+
 12- Explicar las tecnologías Wireless, y sus estándares. 
 
 Las tecnologías Wireless son las que permiten transmitir información sin necesidad de cables, usando ondas de radio, infrarrojas o microondas. Gracias a esto, los dispositivos pueden conectarse entre sí o a una red sin estar físicamente unidos, lo que da más movilidad y flexibilidad.
@@ -83,10 +105,14 @@ El Spanning Tree Protocol (STP) es un protocolo de red que se usa para evitar bu
 STP funciona identificando un switch raíz y calculando la mejor ruta hacia él desde cada dispositivo de la red usando un costo asociado a cada enlace, que generalmente depende del ancho de banda: a mayor velocidad, menor costo. El protocolo mantiene activas las rutas con menor costo y bloquea las demás para evitar bucles. Si alguna ruta activa falla, STP puede reactivar uno de los caminos bloqueados para mantener la conectividad.
 El Spanning Tree Protocol organiza la red de forma que siempre haya una única ruta activa entre dispositivos, evitando problemas por bucles sin desconectar físicamente cables.
 
+Video complementario: https://app.animaker.com/video/KGOEMD7EXAQX6F55
+
 15- Explicar el protocolo de comunicaciones OSPF. 
 El OSPF (Open Shortest Path First) es un protocolo de enrutamiento interior que se utiliza para que los routers dentro de una misma red intercambien información sobre las rutas disponibles y puedan determinar la mejor forma de enviar los paquetes de datos. Es un protocolo de tipo link-state, lo que significa que cada router tiene conocimiento completo del estado de los enlaces de la red y construye un mapa de toda la topología.
 Cada router comparte su información a través de mensajes llamados LSA (Link State Advertisements). Estos mensajes contienen detalles sobre los enlaces que tiene el router y sus costos asociados, generalmente basados en ancho de banda o métricas de rendimiento. Con esa información, cada router ejecuta el algoritmo de Dijkstra para calcular la ruta más corta hacia cada destino, asegurando que los paquetes tomen caminos eficientes y evitando bucles de enrutamiento.
 El OSPF también organiza la red en áreas, lo que permite manejar redes grandes de forma más eficiente y reducir la cantidad de información que cada router necesita procesar. Además, es capaz de adaptarse rápidamente a cambios en la red, como fallas de enlaces o la adición de nuevos routers, actualizando su mapa y recalculando rutas en tiempo real.
+
+Video complementario: https://app.animaker.com/video/KGOEMD7EXAQX6F55
 
 16- Explicar el protocolo ARP. 
 
@@ -97,22 +123,56 @@ El ARP es un componente crítico en redes locales, porque permite que los dispos
 
 
 17- ¿Qué es un Firewall?
+Un firewall es un sistema de seguridad de red que filtra y controla el tráfico de red entrante y saliente según un conjunto de reglas predefinidas. Puede ser hardware, software o una combinación de ambos.
+Su función principal es proteger los recursos internos de accesos no autorizados, ataques externos o malware. Puede trabajar en diferentes niveles (filtrado de paquetes, inspección profunda, cortafuegos de aplicaciones).
+Ejemplo: bloquear puertos no usados, permitir solo tráfico HTTP/HTTPS, detectar conexiones sospechosas.
 
 18- ¿Qué es una DMZ?
+Una DMZ (Demilitarized Zone o Zona Desmilitarizada) es un segmento de red intermedio que separa la red interna de confianza (LAN) de redes externas no seguras (como Internet).
+En esta zona suelen colocarse servidores públicos (correo, web, DNS) que deben ser accesibles desde el exterior, pero que al mismo tiempo no deben tener conexión directa a la red interna.
+La DMZ actúa como un “colchón de seguridad”: si un servidor de la DMZ es comprometido, la red interna permanece protegida.
 
 19- ¿Qué es un Gateway?
+Un gateway es un dispositivo que actúa como punto de entrada y salida entre dos redes que pueden usar protocolos o arquitecturas diferentes.
+A diferencia del router (que conecta redes con el mismo protocolo IP), el gateway puede hacer traducciones de protocolos.
+Ejemplo: un gateway de VoIP convierte tráfico IP en señal telefónica tradicional; un gateway IoT traduce protocolos industriales a TCP/IP.
 
 20- Según Microsoft, ¿qué significa NBL?
+En entornos de Microsoft y Windows, NBL significa Net Buffer List.
+Es una estructura de datos usada por el NDIS (Network Driver Interface Specification) para manejar buffers de red de forma eficiente.
+El NBL permite que los controladores de red y el sistema operativo gestionen paquetes de datos sin tener que copiar información constantemente, mejorando el rendimiento de la pila de red en Windows.
 
-21- Tipos de enlace: MPLS, LAN to LAN, microonda, VSAT. a. Explique cada uno de
-estos tipos de enlace. b. Agregue dos tipos de enlaces, no mencionados
-anteriormente. c. Ranking de enlaces según lo pedido (de uno a seis, siendo uno
-el mejor): Por económico, performance, mayor capacidad, mayor o mejor
-configuración de restricciones, soporte a mayor distancia, menor esfuerzo de
-configuración. d. Elija un tipo de enlace para los siguientes escenarios: 1 d.
-Conectividad de varios de call centers con un data center central. 2 d. Conectar
-los datos de los pozos petroleros durante 15 minutos por día. 3 d. Comunicar dos
-edificios enfrentados en la misma calle.
+21- Tipos de enlace: MPLS, LAN to LAN, microonda, VSAT. 
+a. Explique cada uno de estos tipos de enlace. 
+b. Agregue dos tipos de enlaces, no mencionados anteriormente. 
+c. Ranking de enlaces según lo pedido (de uno a seis, siendo uno el mejor): Por económico, performance, mayor capacidad, mayor o mejor configuración de restricciones, soporte a mayor distancia, menor esfuerzo de configuración. 
+d. Elija un tipo de enlace para los siguientes escenarios: 
+	1 d. Conectividad de varios de call centers con un data center central. 
+	2 d. Conectar los datos de los pozos petroleros durante 15 minutos por día. 
+	3 d. Comunicar dos edificios enfrentados en la misma calle.
+
+a. Explique cada uno:
+MPLS (Multiprotocol Label Switching): Tecnología de red que enruta paquetes usando etiquetas en lugar de direcciones IP. Es rápido, seguro y muy usado en redes corporativas.
+LAN to LAN: Conexión directa entre dos redes locales remotas mediante VPN o enlaces dedicados, permite trabajar como si fueran una sola red.
+Microonda: Enlace inalámbrico punto a punto que utiliza ondas electromagnéticas de alta frecuencia. Ideal para distancias medianas-grandes con línea de vista.
+VSAT (Very Small Aperture Terminal): Tecnología satelital que permite acceso a Internet y datos en áreas remotas mediante antenas pequeñas.
+
+b. Dos tipos adicionales:
+Fibra óptica dedicada: Conexión física de alta velocidad y gran capacidad, con baja latencia.
+4G/5G móvil: Uso de redes móviles para conexión de datos con buena cobertura y movilidad.
+
+c. Ranking de enlaces según criterio (1 = mejor, 6 = peor):
+Económico: 1. LAN to LAN, 2. 4G/5G, 3. Microonda, 4. VSAT, 5. Fibra dedicada, 6. MPLS.
+Performance: 1. Fibra dedicada, 2. MPLS, 3. LAN to LAN, 4. 5G, 5. Microonda, 6. VSAT.
+Mayor capacidad: 1. Fibra dedicada, 2. MPLS, 3. LAN to LAN, 4. 5G, 5. Microonda, 6. VSAT.
+Mayor configuración de restricciones: 1. MPLS, 2. Fibra dedicada, 3. LAN to LAN, 4. VSAT, 5. 5G, 6. Microonda.
+Soporte a mayor distancia: 1. VSAT, 2. MPLS, 3. Fibra dedicada, 4. 5G, 5. Microonda, 6. LAN to LAN.
+Menor esfuerzo de configuración: 1. 5G, 2. LAN to LAN, 3. Fibra dedicada, 4. Microonda, 5. VSAT, 6. MPLS.
+
+d. Escenarios:
+Conectividad de varios call centers con un data center central: MPLS (seguridad, calidad de servicio, estabilidad).
+Conectar datos de pozos petroleros durante 15 minutos por día: VSAT (cubre zonas remotas sin infraestructura terrestre).
+Comunicar dos edificios enfrentados en la misma calle: Microonda o LAN to LAN con fibra (enlace directo, bajo costo).
 
 22- Describir la tecnología LTE.
 Long-Term Evolution o LTE es un estándar inalámbrico de cuarta generación (4G) que proporciona mayor capacidad de red y velocidad para teléfonos móviles y otros dispositivos celulares en comparación con la tercera generación (3G), pero con menor rendimiento (velocidad, retardo de propagación, etc.) que la tecnología 4G pura. LTE ofrece velocidades máximas de transferencia de datos de hasta 100 Mbps de bajada y 30 Mbps de subida. Proporciona latencia reducida, capacidad de ancho de banda escalable y compatibilidad con versiones anteriores de la tecnología existente del Sistema Global para Comunicaciones Móviles (GSM) y del Servicio Universal de Telecomunicaciones Móviles (UMTS). La evolución LTE-Advanced (LTE-A) consigue tasas de hasta 300 Mbps.
@@ -163,3 +223,12 @@ Ariel Iha: he configurado router hogareño para conectar dispositivos ip, como c
 Nestor Diaz: No tengo experiencia en redes, el mayor acercamiento que tuve fue cuando investigué un poco sobre como poder tener internet en mi PC, y aprendí que se puede utilizar placas wifi o usar un cable Ethernet conectado directamente al router. 
 
 Matias Otero: Trabajo en el área de Telecomunicaciones – Estoy mas en la parte de Ups y sistemas de alimentación segura, configuro ocasionalmente algún puerto de un Switch , cambio vlan y realizo algún troubleshooting básico, armo algún cable o conectores ,alguna vez fusione fibra, pero básicamente los conocimientos adquiridos fueron de manera informal.
+
+
+Bibliografia consultada:
+
+Microsoft. (2023). Net Buffer List (NBL) overview. Microsoft Docs. Recuperado de https://learn.microsoft.com
+Stallings, W. (2021). Data and Computer Communications (11th ed.). Pearson.
+Tanenbaum, A. S., & Wetherall, D. J. (2011). Computer Networks (5th ed.). Pearson.
+Kurose, J. F., & Ross, K. W. (2021). Computer Networking: A Top-Down Approach (8th ed.). Pearson.
+Forouzan, B. A. (2017). Data Communications and Networking (5th ed.). McGraw-Hill.
