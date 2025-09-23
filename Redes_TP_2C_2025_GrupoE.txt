@@ -65,8 +65,6 @@ Un dispositivo al conectarse a una red, se le asigna dinámicamente una direcci�
 El DNS es un sistema que conecta los nombres de los sitios con las direcciones que usan las computadoras para encontrarse en la red.
 Cuando alguien escribe un nombre de página, se hace una consulta a un servicio que busca la dirección correspondiente. Si no la tiene guardada, va preguntando en distintos niveles hasta llegar al lugar que tiene la información correcta. Una vez que obtiene esa dirección, la devuelve para que se pueda establecer la comunicación.
 
-Video complementario: https://app.animaker.com/video/KGOEMD7EXAQX6F55
-
 12- Explicar las tecnologías Wireless, y sus estándares. 
 
 Las tecnologías Wireless son las que permiten transmitir información sin necesidad de cables, usando ondas de radio, infrarrojas o microondas. Gracias a esto, los dispositivos pueden conectarse entre sí o a una red sin estar físicamente unidos, lo que da más movilidad y flexibilidad.
@@ -85,14 +83,10 @@ El Spanning Tree Protocol (STP) es un protocolo de red que se usa para evitar bu
 STP funciona identificando un switch raíz y calculando la mejor ruta hacia él desde cada dispositivo de la red usando un costo asociado a cada enlace, que generalmente depende del ancho de banda: a mayor velocidad, menor costo. El protocolo mantiene activas las rutas con menor costo y bloquea las demás para evitar bucles. Si alguna ruta activa falla, STP puede reactivar uno de los caminos bloqueados para mantener la conectividad.
 El Spanning Tree Protocol organiza la red de forma que siempre haya una única ruta activa entre dispositivos, evitando problemas por bucles sin desconectar físicamente cables.
 
-Video complementario: https://app.animaker.com/video/KGOEMD7EXAQX6F55
-
 15- Explicar el protocolo de comunicaciones OSPF. 
 El OSPF (Open Shortest Path First) es un protocolo de enrutamiento interior que se utiliza para que los routers dentro de una misma red intercambien información sobre las rutas disponibles y puedan determinar la mejor forma de enviar los paquetes de datos. Es un protocolo de tipo link-state, lo que significa que cada router tiene conocimiento completo del estado de los enlaces de la red y construye un mapa de toda la topología.
 Cada router comparte su información a través de mensajes llamados LSA (Link State Advertisements). Estos mensajes contienen detalles sobre los enlaces que tiene el router y sus costos asociados, generalmente basados en ancho de banda o métricas de rendimiento. Con esa información, cada router ejecuta el algoritmo de Dijkstra para calcular la ruta más corta hacia cada destino, asegurando que los paquetes tomen caminos eficientes y evitando bucles de enrutamiento.
 El OSPF también organiza la red en áreas, lo que permite manejar redes grandes de forma más eficiente y reducir la cantidad de información que cada router necesita procesar. Además, es capaz de adaptarse rápidamente a cambios en la red, como fallas de enlaces o la adición de nuevos routers, actualizando su mapa y recalculando rutas en tiempo real.
-
-Video complementario: https://app.animaker.com/video/KGOEMD7EXAQX6F55
 
 16- Explicar el protocolo ARP. 
 
@@ -121,20 +115,27 @@ los datos de los pozos petroleros durante 15 minutos por día. 3 d. Comunicar do
 edificios enfrentados en la misma calle.
 
 22- Describir la tecnología LTE.
+Long-Term Evolution o LTE es un estándar inalámbrico de cuarta generación (4G) que proporciona mayor capacidad de red y velocidad para teléfonos móviles y otros dispositivos celulares en comparación con la tercera generación (3G), pero con menor rendimiento (velocidad, retardo de propagación, etc.) que la tecnología 4G pura. LTE ofrece velocidades máximas de transferencia de datos de hasta 100 Mbps de bajada y 30 Mbps de subida. Proporciona latencia reducida, capacidad de ancho de banda escalable y compatibilidad con versiones anteriores de la tecnología existente del Sistema Global para Comunicaciones Móviles (GSM) y del Servicio Universal de Telecomunicaciones Móviles (UMTS). La evolución LTE-Advanced (LTE-A) consigue tasas de hasta 300 Mbps.
 
 23- Explique la solución de Microsoft Teams. Si quieren describir otra solución de
 otra empresa es también válido.
+Microsoft Teams es un espacio de trabajo pensado para la colaboración en tiempo real y la comunicación, las reuniones, el uso compartido de archivos y aplicaciones, e incluso para los ocasionales emoji. Todo en un único lugar, en equipo, y con todo a disposición de todos. stá diseñado para fomentar la colaboración en tiempo real entre miembros de un equipo, ofreciendo un espacio unificado para todas las actividades de colaboración. Sus funcionalidades principales son la mensajería, reuniones y llamadas, intercambio de archivos, integración de aplicaciones y centros de trabajo para organizar las actividades en equipos y canales.
 
 24- ¿Qué significa aplicar calidad en un enlace MPLS?
+Aplicar calidad a un enlace MPLS significa asegurar una experiencia de comunicaciones predecible y confiable, lograda a través de la Calidad de Servicio (QoS). Esto implica priorizar ciertos tipos de tráfico (como VoIP o video) sobre otros (como la navegación web), mediante la asignación de etiquetas a los paquetes de datos. Como resultado, se garantiza que las aplicaciones críticas reciban el ancho de banda y el rendimiento necesarios, manteniendo baja latencia, reduciendo la pérdida de paquetes y asegurando un flujo de datos ininterrumpido
+
 
 25- ¿Qué diferencias puede encontrar entre una conexión Coaxial, UTP o Fibra?
-
-Video complementario: https://www.youtube.com/watch?v=F-FmK9MXJY4
+Las diferencias radican en varios aspectos. En medio de transmisión, coaxial utiliza una señal eléctrica por un conductor central de cobre, UTP una señal eléctrica por pares de hilos de cobre trenzados y fibra Pulso de luz (fotones) a través de un filamento de vidrio/plástico. En velocidades de transmisión, coaxial posee la velocidad más lenta (hasta 10Gbps), seguido por UTP (hasta 40 Gbps),mientras que Fibra llega hasta terabits por segundo. En ancho de banda, coaxial se encuentra en segundo lugar, UTP en ultimo lugar, y finalmente Fibra como la mejor opción ya que admite decenas de  THz. En materia de seguridad, el Coaxial ofrece un grado medio de seguridad ya que la señal puede ser interceptada, UTP ofrece el nivel más bajo de seguridad por la facilidad en la intercepción de la señales, y Fibra ofrece el nivel más alto de seguridad (cortar el cable interrumpe la señal, es muy difícil interceptarla sin ser detectado). En cuanto a costos, Coaxial se encuentra en un grado medio, UTP como la infraestructura de costos más baja, y Fibra como el nivel de costos más alto
 
 26- Según Cisco, ¿qué significa CCENT, CCNA y CCNP? Descripción breve del Track
 Routing & Switching y de algún otro a elección (ej. Wireless, Security, Cloud, etc).
+CCENT Era la certificación de nivel de entrada. Demostraba que una persona tenía las habilidades fundamentales para instalar, operar y solucionar problemas de una pequeña red empresarial. CCNA, o Cisco Certified Network Associate, es una certificación de nivel básico que acredita las habilidades esenciales en redes, como la instalación, configuración y resolución de problemas en redes medianas. Por otro lado, CCNP, o Cisco Certified Network Professional, es una certificación de nivel profesional que requiere que el candidato demuestre conocimientos avanzados en planificación, implementación y resolución de problemas en redes empresariales complejas. El routing es la capacidad de buscar la ruta correcta para mover o transferir paquetes de información entre una o varias redes de Internet.
+El switching es un elemento que hace posible la conexión entre varios dispositivos como ordenadores, servidores o sensores. Todos estos operan en una misma red empresarial o dentro de una estructura física determinada. Un router permite que la información de la red se pueda compartir entre varios equipos, con el nivel de protección adecuado ante potenciales amenazas externas.Mientras que el switch tiene como misión generar una red de recursos compartidos en el ámbito interno de una organización. El track security se centra en proteger los activos de información de un	a organización. Su misión es garantizar la confidencialidad, integridad y disponibilidad de los datos y sistemas frente a amenazas constantes. Un especialista en seguridad no solo pone barreras (firewalls), sino que también monitorea, detecta anomalías y responde a incidentes.
 
 27- Explique el modelo OSI.
+El modelo Open Systems Interconnection (OSI) es un modelo conceptual creado por la Organización Internacional para la Estandarización, el cual permite que diversos sistemas de comunicación se conecten usando protocolos estándar. En otras palabras, el OSI proporciona un estándar para que distintos sistemas de equipos puedan comunicarse entre sí.
+El modelo OSI se puede ver como un lenguaje universal para la conexión de las redes de equipos. Se basa en el concepto de dividir un sistema de comunicación en siete capas abstractas, cada una apilada sobre la anterior.
 
 28- Explicar el estándar IEEE 802.3 regula la red. Cómo se implementa, ventajas y
 desventajas.
