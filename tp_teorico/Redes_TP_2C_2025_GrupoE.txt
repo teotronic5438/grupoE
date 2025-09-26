@@ -53,7 +53,7 @@ Cabecera TCP: incluye puerto de origen, puerto de destino, número de secuencia,
 
 Datos: el contenido real que envía la aplicación (por ejemplo, una página web HTTP, un correo electrónico SMTP, un archivo FTP, etc.).
 
-👉 Entonces, el paquete completo está formado por:
+Entonces, el paquete completo está formado por:
 [Cabecera Enlace] + [Cabecera IP] + [Cabecera TCP] + [Datos de Aplicación]
 
 El flag en un paquete TCP es un bit de control que indica que se está haciendo en la comunicación (iniciar, confirmar, enviar urgente, cerrar, resetear).
@@ -199,12 +199,33 @@ El modelo OSI se puede ver como un lenguaje universal para la conexión de las r
 
 28- Explicar el estándar IEEE 802.3 regula la red. Cómo se implementa, ventajas y
 desventajas.
+El estándar IEEE 802.3 regula Ethernet, la tecnología más usada en redes LAN cableadas.
+Define cómo se transmiten los datos por cobre o fibra, el formato de las tramas (direcciones MAC, cabeceras, control de errores), las velocidades (10 Mbps hasta cientos de Gbps) y el método de acceso al medio (antes CSMA/CD, hoy reemplazado por switches que evitan colisiones).
+
+Implementación
+* Se aplica en redes LAN con topología en estrella, conectando PCs, routers y switches mediante tarjetas de red (NICs) con direcciones MAC únicas. Funciona tanto sobre cables de cobre (UTP/STP) como fibra óptica, según la velocidad y distancia necesarias.
+
+Ventajas
+* Estándar mundial, compatible entre fabricantes.
+* Escalable en velocidad (de 10 Mbps a 400 Gbps).
+* Confiable y económico.
+* Fácil de instalar y configurar.
+* Mayor seguridad física frente a redes inalámbricas.
+
+Desventajas
+* Limitada movilidad al ser cableado.
+* Costoso en grandes distancias por el tendido de cable.
+* En versiones antiguas (hubs) había colisiones.
+* No es ideal para redes WAN de larga distancia.
 
 29- Explicar el estándar IEEE 802.4 regula la red.
 El estándar IEEE 802.4 describe una red en bus que funciona mediante token. El token indica qué estación tiene permiso para transmitir. Ninguna estación puede enviar datos si no tiene el token. Físicamente, la red se organiza como la topología bus, pero lógicamente funciona con la topología de anillo. Cada estación tiene un número único que la identifica. Al iniciar la red, la estación con el número más alto genera el token, que luego se pasa a la estación con el siguiente número más bajo. La estación que recibe el token puede transmitir sus datos y, al terminar o cuando se cumple un tiempo límite, pasa el token a la siguiente estación. Este proceso se repite hasta que todas las estaciones hayan tenido su turno, permitiendo que cada una transmita de manera ordenada y periódica. Así, la red implementa un sistema organizado de acceso al medio llamado multiplexación en el tiempo.
 
 30- ¿Qué protocolos se usan para enviar y recibir correo?
-Para enviar correo se utiliza el protocolo SMTP (Simple Mail Transfer Protocol) y para recibir se usa POP (Post Office Protocol)
+Para enviar correo se utiliza el protocolo SMTP (Simple Mail Transfer Protocol), que se encarga de transferir los mensajes desde el cliente hacia el servidor de correo o entre servidores hasta que llega al destinatario.
+Para recibir correo existen dos protocolos principales:
+* POP (Post Office Protocol): descarga los mensajes desde el servidor hacia el dispositivo local, y por defecto los elimina del servidor (aunque puede configurarse que deje copias).
+* IMAP (Internet Message Access Protocol): mantiene los mensajes en el servidor y permite sincronizarlos en varios dispositivos, facilitando el acceso desde diferentes lugares.
 
 31- ¿Qué protocolo puede usarse para leer correo recibido?
 El protocolo IMAP (Internet Message Access Protocol) permite leer y organizar tus correos directamente en el servidor. Con él puedes mover mensajes entre carpetas, eliminar correos, buscar información dentro de los mensajes y marcar correos con banderas. Por defecto, los correos se quedan en el servidor hasta que tú decidas borrarlos.
@@ -224,14 +245,5 @@ Nestor Diaz: No tengo experiencia en redes, el mayor acercamiento que tuve fue c
 
 Matias Otero: Trabajo en el área de Telecomunicaciones – Estoy mas en la parte de Ups y sistemas de alimentación segura, configuro ocasionalmente algún puerto de un Switch , cambio vlan y realizo algún troubleshooting básico, armo algún cable o conectores ,alguna vez fusione fibra, pero básicamente los conocimientos adquiridos fueron de manera informal.
 
-Elias Orihuela Torres: He trabajado como soporte técnico y revisado habitualmente la configuracion de router, computadoras e impresoras. Armado de cables de red básicos en LAN.
-No tengo experiencia con fibra óptica, pero si hice un curso de administración de redes y Windows server donde vimos configuración de cisco pero fue hace mas de 10 años.
-
-
-Bibliografia consultada:
-
-Microsoft. (2023). Net Buffer List (NBL) overview. Microsoft Docs. Recuperado de https://learn.microsoft.com
-Stallings, W. (2021). Data and Computer Communications (11th ed.). Pearson.
-Tanenbaum, A. S., & Wetherall, D. J. (2011). Computer Networks (5th ed.). Pearson.
-Kurose, J. F., & Ross, K. W. (2021). Computer Networking: A Top-Down Approach (8th ed.). Pearson.
-Forouzan, B. A. (2017). Data Communications and Networking (5th ed.). McGraw-Hill.
+Elias Orihuela Torres: He trabajado como soporte técnico y revisado habitualmente la configuración de router, computadoras e impresoras. Armado de cables de red básicos en LAN.
+No tengo experiencia con fibra óptica, pero si hice un curso de administración de redes pero fue hace más de 10 años.
