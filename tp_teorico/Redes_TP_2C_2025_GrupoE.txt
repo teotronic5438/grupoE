@@ -247,3 +247,5 @@ Matias Otero: Trabajo en el área de Telecomunicaciones – Estoy mas en la part
 
 Elias Orihuela Torres: He trabajado como soporte técnico y revisado habitualmente la configuración de router, computadoras e impresoras. Armado de cables de red básicos en LAN.
 No tengo experiencia con fibra óptica, pero si hice un curso de administración de redes pero fue hace más de 10 años.
+
+Ricardo Luiso: No tengo experiencia en redes, lo máximo que he hecho es acceder al modem para modificar usuario y/o clave de wifi, o configurar un receptor usb wifi para transmitir conexión desde mi smartphone al tener caídas de internet mediante cable de red
